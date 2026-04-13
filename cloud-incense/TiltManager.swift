@@ -152,6 +152,10 @@ final class TiltManager {
         case .faceUp, .faceDown, .unknown:
             // Fallback for unusual orientations
             return (gravity.x, gravity.y)
+
+        @unknown default:
+            // Future-proof for any new UIDeviceOrientation cases.
+            return (gravity.x, gravity.y)
         }
     }
     #endif
