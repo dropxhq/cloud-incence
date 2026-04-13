@@ -33,7 +33,11 @@ struct PrayerInputView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
                     .padding(.horizontal, 10)
-                    .background(Color.white.opacity(session.prayerText.isEmpty ? 0.06 : 0.04))
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.white.opacity(0.18), lineWidth: 1)
+                            .background(Color.white.opacity(0.04).cornerRadius(12))
+                    )
                     .cornerRadius(12)
                 }
                 .buttonStyle(.plain)
@@ -44,9 +48,13 @@ struct PrayerInputView: View {
                         .lineLimit(3...5)
                         .focused($isFocused)
                         .foregroundColor(.white)
-                        .tint(.orange)
+                        .tint(.white)
                         .padding(14)
-                        .background(Color.white.opacity(0.08))
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color.white.opacity(0.22), lineWidth: 1)
+                                .background(Color.white.opacity(0.05).cornerRadius(12))
+                        )
                         .cornerRadius(12)
 
                     Text("点击或长按中间那炷香，点燃心愿")

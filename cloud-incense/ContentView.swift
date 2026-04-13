@@ -14,16 +14,9 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            // Dark incense-room background
-            LinearGradient(
-                colors: [
-                    Color(red: 0.04, green: 0.02, blue: 0.02),
-                    Color(red: 0.10, green: 0.05, blue: 0.03),
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea()
+            // Pure black background — mirrors the icon's deep void aesthetic
+            Color.black
+                .ignoresSafeArea()
             .onTapGesture {
                 // Tapping outside dismisses keyboard and exits composing
                 if session.state == .composing {

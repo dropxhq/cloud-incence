@@ -9,7 +9,7 @@ struct CompletionView: View {
 
     var body: some View {
         ZStack {
-            Color.black.opacity(0.5)
+            Color.black.opacity(0.7)
                 .ignoresSafeArea()
 
             VStack(spacing: 48) {
@@ -47,11 +47,14 @@ struct CompletionView: View {
                         } label: {
                             Text("再次祈祷")
                                 .font(.callout)
-                                .foregroundColor(.white.opacity(0.8))
+                                .foregroundColor(.white.opacity(0.85))
                                 .padding(.horizontal, 32)
                                 .padding(.vertical, 12)
-                                .background(Color.white.opacity(0.12))
-                                .cornerRadius(24)
+                                .overlay(
+                                    Capsule()
+                                        .stroke(Color.white.opacity(0.35), lineWidth: 1)
+                                )
+                                .shadow(color: .white.opacity(0.25), radius: 8)
                         }
                         .buttonStyle(.plain)
                     }

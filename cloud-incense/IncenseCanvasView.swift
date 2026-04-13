@@ -274,17 +274,11 @@ struct IncenseStickView: View {
         ZStack(alignment: .top) {
             // Stick body — scales from the bottom (tip burns away from top)
             RoundedRectangle(cornerRadius: 2.5)
-                .fill(
-                    LinearGradient(
-                        colors: [
-                            Color(red: 0.78, green: 0.52, blue: 0.28),
-                            Color(red: 0.50, green: 0.32, blue: 0.18),
-                        ],
-                        startPoint: .top, endPoint: .bottom
-                    )
-                )
+                .fill(Color.white.opacity(0.82))
                 .frame(width: IncenseLayout.stickWidth)
                 .scaleEffect(y: burnFraction, anchor: .bottom)
+                .shadow(color: .white.opacity(0.6), radius: 3)
+                .shadow(color: .white.opacity(0.25), radius: 7)
 
             // Ash trail overlaying the burned-away portion of the stick
             if isLit && progress > 0.01 {
@@ -296,23 +290,25 @@ struct IncenseStickView: View {
                 )
             }
 
-            // Flame glow at the current burning tip
+            // Flame glow at the current burning tip — cold white neon style
             if isLit && progress < 1.0 {
                 ZStack {
                     Circle()
-                        .fill(Color.orange.opacity(0.25))
-                        .frame(width: 20, height: 20)
-                        .blur(radius: 6)
+                        .fill(Color.white.opacity(0.12))
+                        .frame(width: 22, height: 22)
+                        .blur(radius: 7)
                     Circle()
                         .fill(
                             RadialGradient(
-                                colors: [.white, .yellow, .orange],
+                                colors: [.white, Color(white: 0.88, opacity: 0.85)],
                                 center: .center,
                                 startRadius: 0,
                                 endRadius: 5
                             )
                         )
-                        .frame(width: 9, height: 9)
+                        .frame(width: 7, height: 7)
+                        .shadow(color: .white.opacity(0.9), radius: 6)
+                        .shadow(color: .white.opacity(0.5), radius: 10)
                 }
                 // Position flame at the visual top of the shrinking stick
                 .offset(y: fullHeight * (1.0 - burnFraction))
@@ -327,46 +323,38 @@ struct IncenseStickView: View {
 struct IncenseHolderView: View {
     var body: some View {
         VStack(spacing: 0) {
-            // Tray with three stick holes
+            // Tray with three stick holes — glowing neon stroke
             ZStack {
-                RoundedRectangle(cornerRadius: 5)
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                Color(red: 0.55, green: 0.40, blue: 0.25),
-                                Color(red: 0.38, green: 0.27, blue: 0.16),
-                            ],
-                            startPoint: .top, endPoint: .bottom
-                        )
-                    )
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.white.opacity(0.65), lineWidth: 1.5)
                     .frame(width: 130, height: 16)
+                    .shadow(color: .white.opacity(0.75), radius: 5)
+                    .shadow(color: .white.opacity(0.25), radius: 12)
 
                 HStack(spacing: IncenseLayout.stickSpacing) {
                     ForEach(0..<3, id: \.self) { _ in
                         Circle()
-                            .fill(Color.black.opacity(0.6))
+                            .fill(Color.black)
+                            .overlay(
+                                Circle().stroke(Color.white.opacity(0.35), lineWidth: 1)
+                            )
                             .frame(width: 7, height: 7)
                     }
                 }
             }
 
-            // Narrow neck
-            Rectangle()
-                .fill(Color(red: 0.42, green: 0.30, blue: 0.18))
-                .frame(width: 100, height: 8)
+            // Narrow neck — thin glowing connector
+            Capsule()
+                .fill(Color.white.opacity(0.4))
+                .frame(width: 28, height: 8)
+                .shadow(color: .white.opacity(0.6), radius: 4)
 
-            // Pedestal base
+            // Pedestal base — glowing neon stroke
             RoundedRectangle(cornerRadius: 8)
-                .fill(
-                    LinearGradient(
-                        colors: [
-                            Color(red: 0.48, green: 0.35, blue: 0.22),
-                            Color(red: 0.30, green: 0.22, blue: 0.12),
-                        ],
-                        startPoint: .top, endPoint: .bottom
-                    )
-                )
+                .stroke(Color.white.opacity(0.65), lineWidth: 1.5)
                 .frame(width: 140, height: 26)
+                .shadow(color: .white.opacity(0.75), radius: 6)
+                .shadow(color: .white.opacity(0.25), radius: 14)
         }
         .frame(height: IncenseLayout.holderHeight)
     }
