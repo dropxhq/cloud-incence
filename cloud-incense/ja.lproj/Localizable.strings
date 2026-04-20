@@ -1,0 +1,12 @@
+/* オンボーディング */
+"onboarding.step1.title" = "雲香へようこそ";
+"onboarding.step1.description" = "心の願いを空へ届ける、静かな場所です。";
+
+"onboarding.step2.title" = "願いを書く";
+"onboarding.step2.description" = "画面下の入力欄をタップして、今一番大切な願いを書いてください。";
+
+"onboarding.step3.title" = "香に火をつける";
+"onboarding.step3.description" = "中央のお香をタップまたは長押しして点火します。その後、デバイスを傾けて煙を導き、灰がゆっくり育つのを静かに見守りましょう。";
+
+"onboarding.button.next" = "次へ";
+"onboarding.button.start" = "始める";

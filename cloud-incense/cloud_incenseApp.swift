@@ -9,14 +9,25 @@ import SwiftUI
 
 @main
 struct cloud_incenseApp: App {
+    @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding: Bool = false
     @State private var session = BurnSession()
     @State private var tiltManager = TiltManager()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(session)
-                .environment(tiltManager)
+            ZStack {
+                ContentView()
+                    .environment(session)
+                    .environment(tiltManager)
+
+                if !hasCompletedOnboarding {
+                    OnboardingView {
+                        hasCompletedOnboarding = true
+                    }
+                    .transition(.opacity)
+                }
+            }
+            .animation(.easeInOut(duration: 0.4), value: hasCompletedOnboarding)
         }
         #if os(macOS)
         .windowResizability(.contentSize)

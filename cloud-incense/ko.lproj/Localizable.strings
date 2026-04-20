@@ -1,0 +1,12 @@
+/* 온보딩 */
+"onboarding.step1.title" = "Incense에 오신 것을 환영합니다";
+"onboarding.step1.description" = "소원을 하늘로 보내는 고요한 공간입니다.";
+
+"onboarding.step2.title" = "소원 적기";
+"onboarding.step2.description" = "화면 하단의 입력란을 탭하여 지금 마음속에 담긴 소원을 적어보세요.";
+
+"onboarding.step3.title" = "향에 불 붙이기";
+"onboarding.step3.description" = "가운데 향을 탭하거나 길게 눌러 점화하세요. 그런 다음 기기를 기울여 연기를 이끌고, 재가 천천히 자라는 것을 조용히 바라보세요.";
+
+"onboarding.button.next" = "다음";
+"onboarding.button.start" = "시작";

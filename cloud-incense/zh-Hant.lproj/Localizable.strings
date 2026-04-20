@@ -1,0 +1,12 @@
+/* 引導 */
+"onboarding.step1.title" = "歡迎使用雲香";
+"onboarding.step1.description" = "一處靜謐之所，讓您將心願送上雲端。";
+
+"onboarding.step2.title" = "寫下心願";
+"onboarding.step2.description" = "點擊底部輸入框，寫下此刻內心最深的願望。";
+
+"onboarding.step3.title" = "點燃香，開始祈禱";
+"onboarding.step3.description" = "點擊或長按中間那炷香，點燃心願。然後傾斜裝置引導煙霧，靜靜看灰燼慢慢生長。";
+
+"onboarding.button.next" = "下一步";
+"onboarding.button.start" = "開始";

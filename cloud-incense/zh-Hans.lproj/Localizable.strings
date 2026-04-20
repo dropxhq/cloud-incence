@@ -1,0 +1,12 @@
+/* 引导 */
+"onboarding.step1.title" = "欢迎使用云香";
+"onboarding.step1.description" = "一处静谧之所，让您将心愿送上云端。";
+
+"onboarding.step2.title" = "写下心愿";
+"onboarding.step2.description" = "点击底部输入框，写下此刻内心最深的愿望。";
+
+"onboarding.step3.title" = "点燃香，开始祈祷";
+"onboarding.step3.description" = "点击或长按中间那炷香，点燃心愿。然后倾斜设备引导烟雾，静静看灰烬慢慢生长。";
+
+"onboarding.button.next" = "下一步";
+"onboarding.button.start" = "开始";

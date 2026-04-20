@@ -1,0 +1,12 @@
+/* Onboarding */
+"onboarding.step1.title" = "Welcome to Incense";
+"onboarding.step1.description" = "A quiet space to send your wishes to the sky.";
+
+"onboarding.step2.title" = "Write Your Wish";
+"onboarding.step2.description" = "Tap the text field at the bottom and type what's on your heart.";
+
+"onboarding.step3.title" = "Light the Incense";
+"onboarding.step3.description" = "Tap or long-press the center incense stick to ignite it. Then tilt your device to guide the smoke, and watch the ash slowly grow.";
+
+"onboarding.button.next" = "Next";
+"onboarding.button.start" = "Begin";
